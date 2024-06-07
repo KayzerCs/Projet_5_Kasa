@@ -1,18 +1,34 @@
 .navigation {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  img {
+    width: auto;
+    height: 45px;
+  }
 
   ul {
     display: flex;
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 
-    a {
+    .nav-link {
       text-decoration: none;
-      padding: 10px;
+      padding: 20px;
+      position: relative;
+      transition: color 0.3s ease;
 
       li {
         color: black;
+        transition: color 0.3s ease;
+        font-weight: 500;
+      }
+
+      &.active li {
+        border-bottom: 1px solid rgb(0, 0, 0); // Trait en dessous pour indiquer l'état actif
       }
     }
   }
-}
+} 

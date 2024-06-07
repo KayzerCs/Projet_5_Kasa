@@ -1,21 +1,26 @@
 import React from "react";
 import Logo from "../assets/img/Logo.png";
 import { NavLink } from "react-router-dom";
+import "../styles/components/_NavLogo.scss";
 
 const NavLogo = () => {
   return (
     <div className="navigation">
       <img src={Logo} alt="logo" />
       <ul>
-        <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
-          <li>Acceuil</li>
+        <NavLink
+          to="/"
+          end
+          className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+        >
+          <li>Accueil</li>
         </NavLink>
 
         <NavLink
           to="/about"
-          className={(nav) => (nav.isActive ? "nav-active" : "")}
+          className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
         >
-          <li>A Propos</li>
+          <li>À Propos</li>
         </NavLink>
       </ul>
     </div>
