@@ -1,0 +1,45 @@
+// _Collapse.scss
+@import "../settings";
+
+.collapse-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.collapse-button {
+  width: 100%;
+  background-color: $color-3;
+  color: $color-2;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: darken($color-3, 10%);
+  }
+}
+
+
+.collapse-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 0 10px;
+  background-color: #ffe5e5;
+  font-size: 16px;
+  line-height: 1.5;
+
+  &.show {
+    max-height: 1000px; // Assurez-vous que cette valeur est assez grande pour contenir le contenu
+    padding: 10px 10px;
+  }
+}
