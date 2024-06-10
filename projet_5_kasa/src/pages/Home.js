@@ -14,6 +14,9 @@ const Home = () => {
         text="Chez vous, partout et ailleurs"
         customClass="home"
       />
+      <div className="body">
+      <div className="container_main_home"></div>
+      </div>
       <Footer />
     </div>
   );

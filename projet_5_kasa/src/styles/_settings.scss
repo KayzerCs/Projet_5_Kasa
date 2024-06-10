@@ -4,7 +4,12 @@
 
 $color-1: black;
 $color-2: white;
-$color-3: rgb(255,96,96);
+$color-3: rgb(255, 96, 96);
+
+body {
+  margin: 0; // Supprime les marges par défaut
+  padding: 0; // Supprime les padding par défaut
+}
 
 .body {
   padding: 1% 4%;

@@ -1,27 +1,27 @@
 @import "../settings";
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  background-color: $color-1;
-  color: $color-2;
-  height: 150px;
+  width: 100%; // Assure que le footer prend toute la largeur du viewport
+  background-color: $color-1; // Couleur de fond personnalisée
+  color: $color-2; // Couleur du texte personnalisée
+  height: 150px; // Hauteur du footer
   display: flex;
-  justify-content: center;
-  text-align: center;
+  justify-content: center; // Centre le contenu horizontalement
+  align-items: center; // Centre le contenu verticalement
+  text-align: center; // Aligne le texte au centre
+  padding: 0; // Supprime tout padding
+  margin: 0; // Supprime toute marge
 
   div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-content: flex-end;
+    justify-content: center; // Centre les éléments verticalement
+    align-items: center; // Centre les éléments horizontalement
 
     p {
-      margin-top: 35px;
-      margin-bottom: 20px;
+      margin-top: 35px; // Espace au-dessus du paragraphe
+      margin-bottom: 20px; // Espace en dessous du paragraphe
     }
   }
 }
+
