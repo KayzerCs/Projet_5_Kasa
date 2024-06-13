@@ -1,28 +1,39 @@
 @import "../settings";
 
-.container_p {
+.page_notfound {
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 
-  .number {
-    font-size: 200px;
-    font-weight: 700;
-    color: $color-3;
-    margin-top: 70px;
+  .container_p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .number {
+      font-size: 200px;
+      font-weight: 700;
+      color: $color-3;
+      margin-top: 70px;
+    }
+
+    p {
+      font-size: 25px;
+      color: $color-3;
+      margin-top: -150px;
+      letter-spacing: 1px;
+    }
+
+    .link {
+      font-size: 14px;
+      margin-top: 100px;
+      color: $color-1;
+    }
   }
 
-  p {
-    font-size: 25px;
-    color: $color-3;
-    margin-top: -150px;
-    letter-spacing: 1px;
-  }
-
-  .link {
-    font-size: 14px;
-    margin-top: 100px;
-    color: $color-1;
+  .footer {
+    margin-top: auto; 
+    
   }
 }

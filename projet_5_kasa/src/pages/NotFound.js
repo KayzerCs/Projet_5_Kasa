@@ -5,14 +5,18 @@ import Footer from "../components/Footer";
 
 const NotFound = () => {
   return (
-    <div>
+    <div className="page_notfound">
       <NavLogo />
       <div className="container_p">
         <p className="number">404</p>
         <p>Oups! La page que vous demandez n'existe pas.</p>
-        <Link className="link" to="/">Retourner sur la page d'acceuil</Link>
+        <Link className="link" to="/">
+          Retourner sur la page d'acceuil
+        </Link>
       </div>
-      <Footer />
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 };

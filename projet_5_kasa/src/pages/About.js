@@ -7,7 +7,6 @@ import Collapse from "../components/Collapse"; // Importe le composant de collap
 
 import aboutImage from "../assets/img/paysage_2.jpg";
 
-
 // Définition du composant fonctionnel About
 const About = () => {
   // Déclare une variable d'état openIndex avec une valeur initiale de null pour suivre quel collapse est ouvert
@@ -22,7 +21,7 @@ const About = () => {
 
   // Retourne le JSX pour le composant About
   return (
-    <div>
+    <div className="page_about">
       {/* Inclut le logo de navigation en haut de la page */}
       <NavLogo />
 
@@ -96,7 +95,9 @@ const About = () => {
       </div>
 
       {/* Inclut le pied de page en bas de la page */}
-      <Footer />
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 };

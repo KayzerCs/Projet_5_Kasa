@@ -1,5 +1,17 @@
 @import "../settings";
 
-.container_collapses {
-  padding-top: 55px;
+.page_about {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Assurez que la page prend toute la hauteur de la fenêtre */
+
+  .container_collapses {
+    padding-top: 55px;
+    flex: 1; /* Permet à cette section de prendre tout l'espace disponible */
+  }
+
+  .footer {
+    margin-top: auto; /* Pousse le footer vers le bas */
+    /* Ajoutez d'autres styles si nécessaire */
+  }
 }
