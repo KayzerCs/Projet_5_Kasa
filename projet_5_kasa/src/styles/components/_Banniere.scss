@@ -12,6 +12,7 @@
   align-items: center;
   text-align: center;
   position: relative; // Pour que l'élément soit le conteneur de positionnement pour ::before
+  margin-bottom: 10px;
 
   &.home {
     // Utilisation de ::before pour couvrir toute la bannière
@@ -22,7 +23,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); // Couleur de fond sombre
+      background-color: rgba(0, 0, 0, 0.384); // Couleur de fond sombre
       border-radius: 20px; // Appliquez la même bordure arrondie
       z-index: 1; // Place le fond sombre derrière le texte
     }

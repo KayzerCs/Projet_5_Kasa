@@ -2,6 +2,7 @@ import React from "react";
 import NavLogo from "../components/NavLogo";
 import Footer from "../components/Footer";
 import Banniere from "../components/Banniere";
+import CardContainer from "../components/CardContainer";
 
 import homeImage from "../assets/img/paysage_1.jpg";
 
@@ -15,7 +16,7 @@ const Home = () => {
         customClass="home"
       />
       <div className="body">
-      <div className="container_main_home"></div>
+      <CardContainer />
       </div>
       <Footer />
     </div>

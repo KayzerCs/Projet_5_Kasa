@@ -1,0 +1,39 @@
+@import "../settings";
+
+.card {
+  width: 100%; // Utilise toute la largeur disponible de la colonne dans la grille
+  height: 25vw; // Utiliser des unités relatives pour la hauteur
+  background: $color-3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .card-content {
+    padding: 2vw; // Utiliser des unités relatives pour le padding
+  }
+
+  .card-title {
+    color: $color-2;
+    font-size: 2vw; // Utiliser des unités relatives pour la taille du texte
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    height: 40vw; // Ajuste la hauteur des cartes pour les écrans plus petits
+    .card-title {
+      font-size: 3vw; // Ajuste la taille du texte pour les écrans plus petits
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    height: 60vw; // Ajuste encore la hauteur pour les très petits écrans
+    .card-title {
+      font-size: 4vw; // Ajuste encore la taille du texte
+    }
+  }
+}
