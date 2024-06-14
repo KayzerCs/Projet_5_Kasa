@@ -11,7 +11,7 @@ const About = () => {
       <NavLogo />
 
       <div>
-        <Banniere backgroundImage={aboutImage} customClass="about" />
+        <Banniere backgroundImage={aboutImage} />
 
         <div className="container_collapses">
           <Collapse title="Fiabilité">
