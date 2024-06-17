@@ -1,39 +1,54 @@
-@import "../settings";
+@import "../settings"; // Importe les paramètres généraux, si nécessaire
 
 .card {
-  width: 100%; // Utilise toute la largeur disponible de la colonne dans la grille
-  height: 25vw; // Utiliser des unités relatives pour la hauteur
-  background: $color-3;
+  width: 100%;
+  height: 25vw; 
+  background: #fff;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+
+  .card-image-container {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // S'assure que l'image couvre toute la surface du conteneur tout en gardant ses proportions.
+    display: block;
+  }
 
   .card-content {
-    padding: 2vw; // Utiliser des unités relatives pour le padding
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
   }
 
   .card-title {
-    color: $color-2;
-    font-size: 2vw; // Utiliser des unités relatives pour la taille du texte
+    font-size: 1.2em;
+    margin: 0;
   }
 }
 
 @media (max-width: 800px) {
   .card {
-    height: 40vw; // Ajuste la hauteur des cartes pour les écrans plus petits
-    .card-title {
-      font-size: 3vw; // Ajuste la taille du texte pour les écrans plus petits
-    }
+    height: 35vw; 
   }
 }
 
 @media (max-width: 500px) {
   .card {
-    height: 60vw; // Ajuste encore la hauteur pour les très petits écrans
-    .card-title {
-      font-size: 4vw; // Ajuste encore la taille du texte
-    }
+    height: 55vw; 
   }
 }

@@ -1,32 +1,28 @@
-@import "../settings";
-$container-bg: #f0f0f0;
+@import "../settings"; // Importe les paramètres généraux, si nécessaire
 
 .card-container {
   display: grid; // Utilise CSS Grid pour la mise en page
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(30%, 1fr)
-  ); // Colonnes flexibles qui s'ajustent à l'espace disponible
-  gap: 4vw; // Ajoute un espace de 2vw entre les cartes
-  padding: 3vw; // Ajoute un padding relatif autour des cartes
-    // background-color: rgb(246,246,246);
+  grid-template-columns: repeat(3, 1fr); // Limite à un maximum de 3 colonnes
+  gap: 20px; // Espace entre les cartes
+  padding: 20px;
+  // background-color: rgb(246,246,246);
   background-color: grey;
   border-radius: 10px;
-  justify-items: center; // Centre chaque carte horizontalement
+  justify-items: center;
 }
 
 @media (max-width: 800px) {
   .card-container {
     grid-template-columns: repeat(2, 1fr); // Ajuste la grille à deux colonnes
-    gap: 4vw; // Ajuste l'espace entre les cartes pour les écrans plus petits
+    gap: 20px; // Ajuste l'espace entre les cartes
   }
 }
 
 @media (max-width: 500px) {
   .card-container {
-    grid-template-columns: 1fr; // Ajuste la grille à une seule colonne pour les écrans très petits
-    gap: 5vw; // Ajuste l'espace entre les cartes pour les écrans très petits
+    grid-template-columns: 1fr; // Ajuste la grille à une colonne
+    gap: 20px;
     padding: 0;
-    background-color: $color-2;
+    background-color: #f0f0f0;
   }
 }
