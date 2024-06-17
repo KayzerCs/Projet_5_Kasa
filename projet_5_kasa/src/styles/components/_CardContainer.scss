@@ -3,10 +3,10 @@
 .card-container {
   display: grid; // Utilise CSS Grid pour la mise en page
   grid-template-columns: repeat(3, 1fr); // Limite à un maximum de 3 colonnes
-  gap: 20px; // Espace entre les cartes
-  padding: 20px;
-  // background-color: rgb(246,246,246);
-  background-color: grey;
+  gap: 25px; // Espace entre les cartes
+  padding: 25px;
+  background-color: rgb(246,246,246);
+  // background-color: grey;/
   border-radius: 10px;
   justify-items: center;
 }
