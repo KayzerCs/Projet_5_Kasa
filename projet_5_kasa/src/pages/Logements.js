@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons"; // Importer l'icône d'étoile
 import NavLogo from "../components/NavLogo";
 import Footer from "../components/Footer";
+import Collapse from "../components/Collapse"; // Importer le composant Collapse
 
 const Logement = () => {
   const { id } = useParams(); // Récupère l'ID du logement depuis l'URL
@@ -43,9 +44,9 @@ const Logement = () => {
   const [firstName, lastName] = logement.host.name.split(" ");
 
   return (
-    <div>
+    <div className="page_logements">
+      <NavLogo />
       <div className="body">
-        <NavLogo />
         <div className="container-logements">
           <div className="container-img">
             <img src={logement.cover} alt={logement.title} />
@@ -81,18 +82,33 @@ const Logement = () => {
                     <FontAwesomeIcon
                       key={index}
                       icon={faStar}
-                      className={index < logement.rating ? "star filled" : "star"}
+                      className={
+                        index < logement.rating ? "star filled" : "star"
+                      }
                     />
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="part-3"></div>
+            <div className="part-3">
+              <Collapse title="Description" className="collapse-logements">
+                <p>{logement.description}</p>
+              </Collapse>
+              <Collapse title="Équipements" className="collapse-logements">
+                <ul>
+                  {logement.equipments.map((equipment, index) => (
+                    <li key={index}>{equipment}</li>
+                  ))}
+                </ul>
+              </Collapse>
+            </div>
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 };

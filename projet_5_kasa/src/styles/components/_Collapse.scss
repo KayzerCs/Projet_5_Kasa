@@ -4,6 +4,10 @@
 .collapse-container {
   width: 80%; // Définit la largeur à 80% de son conteneur parent
   margin: 0 auto; // Centre le conteneur horizontalement dans son parent
+
+  &.collapse-logements {
+    width: 40%;
+  }
 }
 
 // Définition du style pour le bouton de collapse
@@ -68,3 +72,5 @@
     visibility: visible; // Rend le contenu visible (annule l'effet de `visibility: hidden`)
   }
 }
+
+

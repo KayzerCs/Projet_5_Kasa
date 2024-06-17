@@ -1,94 +1,108 @@
 @import "../settings";
-
-.container-logements {
+.page_logements {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 
-  .container-img {
-    width: 100%; // Utilise toute la largeur disponible
-    height: 45vh; // Fixe la hauteur à 300px (ou selon vos besoins)
-    overflow: hidden; // Cache les parties de l'image qui dépassent du conteneur
-    position: relative; // Nécessaire pour le positionnement absolu de l'image
-    border-radius: 10px; // Ajoute des coins arrondis
+  .container-logements {
+    display: flex;
+    flex-direction: column;
 
-    img {
-      width: 100%; // L'image prend toute la largeur du conteneur
-      height: 100%; // L'image prend toute la hauteur du conteneur
-      object-fit: cover; // Couvre le conteneur tout en maintenant les proportions de l'image
-      position: absolute; // Position absolue pour s'assurer que l'image respecte les dimensions du conteneur
+    .container-img {
+      width: 100%; // Utilise toute la largeur disponible
+      height: 45vh; // Fixe la hauteur à 300px (ou selon vos besoins)
+      overflow: hidden; // Cache les parties de l'image qui dépassent du conteneur
+      position: relative; // Nécessaire pour le positionnement absolu de l'image
+      border-radius: 10px; // Ajoute des coins arrondis
+
+      img {
+        width: 100%; // L'image prend toute la largeur du conteneur
+        height: 100%; // L'image prend toute la hauteur du conteneur
+        object-fit: cover; // Couvre le conteneur tout en maintenant les proportions de l'image
+        position: absolute; // Position absolue pour s'assurer que l'image respecte les dimensions du conteneur
+      }
+    }
+
+    .section_1 {
+      display: flex;
+      justify-content: space-between;
+
+      h1 {
+        color: $color-3;
+        font-size: 35px;
+        font-weight: 400;
+      }
+      p {
+        margin-top: -20px;
+        font-weight: 500;
+      }
+      .tags {
+        display: flex;
+        gap: 10px;
+
+        .tag {
+          background-color: $color-3;
+          border-radius: 10px;
+          color: $color-2;
+          padding: 3px 30px;
+          font-weight: 500;
+        }
+      }
+
+      .part-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .host {
+          display: flex;
+          justify-content: flex-end;
+          gap: 18px;
+          margin-top: 25px;
+
+          .host-name {
+            display: flex;
+            flex-direction: column; // Affiche les enfants sur des lignes distinctes
+            align-items: flex-end;
+            gap: 5px; // Espace entre le prénom et le nom de famille
+            margin-top: 8px;
+          }
+
+          .first-name,
+          .last-name {
+            font-size: 1em;
+            color: #ff6060;
+          }
+
+          img {
+            border-radius: 100%;
+            height: 7vh;
+          }
+        }
+
+        .rating {
+          display: flex; // Utiliser Flexbox pour l'alignement
+          gap: 10px; // Ajuster l'espace entre les étoiles
+
+          .star {
+            font-size: 1.5em;
+            color: #ccc; // Grise pour les étoiles non remplies
+          }
+
+          .filled {
+            color: #ff6060; // Rouge pour les étoiles remplies
+          }
+        }
+      }
+      .part-3 {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 
-  .section_1 {
-    display: flex;
-    justify-content: space-between;
-
-    h1 {
-      color: $color-3;
-      font-size: 35px;
-      font-weight: 400;
-    }
-    p {
-      margin-top: -20px;
-      font-weight: 500;
-    }
-    .tags {
-      display: flex;
-      gap: 10px;
-
-      .tag {
-        background-color: $color-3;
-        border-radius: 10px;
-        color: $color-2;
-        padding: 3px 30px;
-        font-weight: 500;
-      }
-    }
-
-    .part-2 {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      .host {
-        display: flex;
-        justify-content: flex-end;
-        gap: 18px;
-        margin-top: 25px;
-
-        .host-name {
-          display: flex;
-          flex-direction: column; // Affiche les enfants sur des lignes distinctes
-          align-items: flex-end;
-          gap: 5px; // Espace entre le prénom et le nom de famille
-          margin-top: 8px;
-        }
-
-        .first-name,
-        .last-name {
-          font-size: 1em;
-          color: #ff6060;
-        }
-
-        img {
-          border-radius: 100%;
-          height: 7vh;
-        }
-      }
-
-      .rating {
-        display: flex; // Utiliser Flexbox pour l'alignement
-        gap: 10px; // Ajuster l'espace entre les étoiles
-
-        .star {
-          font-size: 1.5em;
-          color: #ccc; // Grise pour les étoiles non remplies
-        }
-
-        .filled {
-          color: #ff6060; // Rouge pour les étoiles remplies
-        }
-      }
-    }
+  .footer {
+    margin-top: auto; /* Pousse le footer vers le bas */
+    /* Ajoutez d'autres styles si nécessaire */
   }
 }

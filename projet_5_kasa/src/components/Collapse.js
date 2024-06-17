@@ -4,7 +4,7 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons"; // Importe l'ic
 import "../styles/components/_Collapse.scss"; // Importe les styles pour ce composant depuis un fichier SCSS
 
 // Définition du composant fonctionnel Collapse qui accepte les props title et children
-const Collapse = ({ title, children }) => {
+const Collapse = ({ title, children, className }) => {
   const [isOpen, setIsOpen] = useState(false); // Initialise l'état isOpen à false, indiquant que la section est fermée par défaut
 
   // Fonction pour basculer l'état d'ouverture/fermeture du collapse
@@ -16,12 +16,9 @@ const Collapse = ({ title, children }) => {
     <div className="body">
       {" "}
       {/* Conteneur principal pour le composant Collapse */}
-      <div className="collapse-container">
-        {" "}
+      <div className={`collapse-container ${className}`}>
         {/* Conteneur pour styliser le collapse */}
         <button className="collapse-button" onClick={toggleCollapse}>
-          {" "}
-          {/* Bouton pour ouvrir/fermer le collapse */}
           {title} {/* Affiche le titre de la section collapse */}
           <FontAwesomeIcon
             icon={faChevronUp} // Affiche l'icône faChevronUp
@@ -29,8 +26,6 @@ const Collapse = ({ title, children }) => {
           />
         </button>
         <div className={`collapse-content ${isOpen ? "show" : ""}`}>
-          {" "}
-          {/* Conteneur pour le contenu de la section collapse */}
           {children}{" "}
           {/* Affiche le contenu passé en tant qu'enfants du composant */}
         </div>
