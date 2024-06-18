@@ -8,7 +8,7 @@ import "../styles/components/_Banniere.scss";
 const Banniere = ({ backgroundImage, text, customClass }) => {
   // Retourne un élément JSX représentant la structure de la bannière
   return (
-    <div className="body">
+    <div>
       {" "}
       {/* Conteneur principal pour le style global */}
       <div

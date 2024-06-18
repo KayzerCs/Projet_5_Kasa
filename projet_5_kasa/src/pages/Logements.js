@@ -45,12 +45,14 @@ const Logement = () => {
 
   return (
     <div className="page_logements">
-      <NavLogo />
       <div className="body">
+        <NavLogo />
+
         <div className="container-logements">
           <div className="container-img">
             <img src={logement.cover} alt={logement.title} />
           </div>
+
           <div className="infos">
             <div className="section_1">
               <div className="part-1">
@@ -77,6 +79,7 @@ const Logement = () => {
                     className="host-picture"
                   />
                 </div>
+
                 <div className="rating">
                   {Array.from({ length: 5 }, (_, index) => (
                     <FontAwesomeIcon
@@ -92,20 +95,25 @@ const Logement = () => {
             </div>
 
             <div className="part-3">
-              <Collapse title="Description" className="collapse-logements">
-                <p>{logement.description}</p>
-              </Collapse>
-              <Collapse title="Équipements" className="collapse-logements">
-                <ul>
-                  {logement.equipments.map((equipment, index) => (
-                    <li key={index}>{equipment}</li>
-                  ))}
-                </ul>
-              </Collapse>
+              <div className="container-collapse">
+                <Collapse title="Description" className="collapse-description">
+                  <p>{logement.description}</p>
+                </Collapse>
+              </div>
+              <div className="container-collapse">
+                <Collapse title="Équipements" className="collapse-equipement">
+                  <ul>
+                    {logement.equipments.map((equipment, index) => (
+                      <li key={index}>{equipment}</li>
+                    ))}
+                  </ul>
+                </Collapse>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div className="footer">
         <Footer />
       </div>

@@ -8,9 +8,11 @@ import aboutImage from "../assets/img/paysage_2.jpg";
 const About = () => {
   return (
     <div className="page_about">
-      <NavLogo />
+      <div className="body">
+        <div className="navlogo">
+          <NavLogo />
+        </div>
 
-      <div>
         <Banniere backgroundImage={aboutImage} />
 
         <div className="container_collapses">

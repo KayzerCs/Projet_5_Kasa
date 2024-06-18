@@ -9,14 +9,16 @@ import homeImage from "../assets/img/paysage_1.jpg";
 const Home = () => {
   return (
     <div>
-      <NavLogo />
-      <Banniere
-        backgroundImage={homeImage}
-        text="Chez vous, partout et ailleurs"
-        customClass="home"
-      />
       <div className="body">
-      <CardContainer />
+        <NavLogo />
+        <Banniere
+          backgroundImage={homeImage}
+          text="Chez vous, partout et ailleurs"
+          customClass="home"
+        />
+        <div>
+          <CardContainer />
+        </div>
       </div>
       <Footer />
     </div>

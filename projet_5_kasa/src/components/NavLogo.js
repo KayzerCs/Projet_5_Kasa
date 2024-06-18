@@ -5,7 +5,7 @@ import "../styles/components/_NavLogo.scss";
 
 const NavLogo = () => {
   return (
-    <div className="body">
+    <div>
       <div className="navigation">
         <img src={Logo} alt="logo" />
         <ul>

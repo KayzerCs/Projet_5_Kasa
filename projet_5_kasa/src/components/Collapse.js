@@ -13,7 +13,7 @@ const Collapse = ({ title, children, className }) => {
   };
 
   return (
-    <div className="body">
+    <div className="collapse">
       {" "}
       {/* Conteneur principal pour le composant Collapse */}
       <div className={`collapse-container ${className}`}>
