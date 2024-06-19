@@ -22,10 +22,18 @@
       position: relative;
       transition: color 0.3s ease;
 
+      @media (max-width: 440px) {
+        padding: 20px 5px;
+      }
+
       li {
         color: $color-1;
         transition: color 0.3s ease;
         font-weight: 500;
+
+        @media (max-width: 440px) {
+          font-size: 15px;
+        }
       }
 
       &.active li {
