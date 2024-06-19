@@ -11,11 +11,11 @@
 
     .container-img {
       margin-top: 15px;
-      width: 100%; // Utilise toute la largeur disponible
-      height: 45vh; // Fixe la hauteur à 300px (ou selon vos besoins)
-      overflow: hidden; // Cache les parties de l'image qui dépassent du conteneur
-      position: relative; // Nécessaire pour le positionnement absolu de l'image
-      border-radius: 10px; // Ajoute des coins arrondis
+      width: 100%;
+      height: 45vh;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
 
       .nav-arrow {
         position: absolute;
@@ -52,10 +52,10 @@
       }
 
       img {
-        width: 100%; // L'image prend toute la largeur du conteneur
-        height: 100%; // L'image prend toute la hauteur du conteneur
-        object-fit: cover; // Couvre le conteneur tout en maintenant les proportions de l'image
-        position: absolute; // Position absolue pour s'assurer que l'image respecte les dimensions du conteneur
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
       }
     }
 
@@ -64,14 +64,26 @@
         display: flex;
         justify-content: space-between;
 
+        @media (max-width: 820px) {
+          flex-direction: column;
+        }
+
         h1 {
           color: $color-3;
           font-size: 35px;
           font-weight: 400;
+
+          @media (max-width: 630px) {
+            font-size: 25px;
+          }
         }
         p {
           margin-top: -20px;
           font-weight: 500;
+
+          @media (max-width: 630px) {
+            margin-top: 2%;
+          }
         }
         .tags {
           display: flex;
@@ -83,6 +95,14 @@
             color: $color-2;
             padding: 3px 30px;
             font-weight: 500;
+            display: flex;
+            align-items: center;
+
+            @media (max-width: 630px) {
+              font-size: 13px;
+              border-radius: 8px;
+              padding: 3px 10px;
+            }
           }
         }
 
@@ -91,17 +111,27 @@
           flex-direction: column;
           justify-content: space-between;
 
+          @media (max-width: 820px) {
+            flex-direction: row-reverse;
+            align-items: center;
+            margin-top: 2%;
+          }
+
           .host {
             display: flex;
             justify-content: flex-end;
             gap: 18px;
             margin-top: 25px;
 
+            @media (max-width: 820px) {
+              margin-top: 0%;
+            }
+
             .host-name {
               display: flex;
-              flex-direction: column; // Affiche les enfants sur des lignes distinctes
+              flex-direction: column;
               align-items: flex-end;
-              gap: 5px; // Espace entre le prénom et le nom de famille
+              gap: 5px;
               margin-top: 8px;
             }
 
@@ -114,20 +144,28 @@
             img {
               border-radius: 100%;
               height: 7vh;
+
+              @media (max-width: 630px) {
+                height: 6vh;
+              }
             }
           }
 
           .rating {
-            display: flex; // Utiliser Flexbox pour l'alignement
-            gap: 10px; // Ajuster l'espace entre les étoiles
+            display: flex;
+            gap: 10px;
 
             .star {
               font-size: 1.5em;
-              color: #ccc; // Grise pour les étoiles non remplies
+              color: #ccc;
+
+              @media (max-width: 630px) {
+                font-size: 1.1em;
+              }
             }
 
             .filled {
-              color: #ff6060; // Rouge pour les étoiles remplies
+              color: #ff6060;
             }
           }
         }
@@ -135,15 +173,24 @@
       .part-3 {
         display: flex;
         margin-top: 25px;
+
+        @media (max-width: 820px) {
+          flex-direction: column;
+        }
+
         .container-collapse {
           width: 50%;
+
+          @media (max-width: 820px) {
+            width: 100%;
+            margin-bottom: 5%;
+          }
         }
       }
     }
   }
 
   .footer {
-    margin-top: auto; /* Pousse le footer vers le bas */
-    /* Ajoutez d'autres styles si nécessaire */
+    margin-top: auto;
   }
 }
