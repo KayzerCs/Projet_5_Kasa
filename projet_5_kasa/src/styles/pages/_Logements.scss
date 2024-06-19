@@ -1,4 +1,5 @@
 @import "../settings";
+
 .page_logements {
   display: flex;
   flex-direction: column;
@@ -15,6 +16,40 @@
       overflow: hidden; // Cache les parties de l'image qui dépassent du conteneur
       position: relative; // Nécessaire pour le positionnement absolu de l'image
       border-radius: 10px; // Ajoute des coins arrondis
+
+      .nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+        font-size: 4rem;
+        padding: 10px;
+        z-index: 10;
+        cursor: pointer;
+      }
+
+      .left-arrow {
+        left: 10px;
+        color: $color-2;
+      }
+
+      .right-arrow {
+        right: 10px;
+        color: $color-2;
+      }
+
+      .image-counter {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
 
       img {
         width: 100%; // L'image prend toute la largeur du conteneur

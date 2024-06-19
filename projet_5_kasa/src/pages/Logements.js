@@ -1,28 +1,38 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons"; // Importer l'icône d'étoile
+import {
+  faChevronLeft,
+  faChevronRight,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 import NavLogo from "../components/NavLogo";
 import Footer from "../components/Footer";
-import Collapse from "../components/Collapse"; // Importer le composant Collapse
+import Collapse from "../components/Collapse";
 
 const Logement = () => {
-  const { id } = useParams(); // Récupère l'ID du logement depuis l'URL
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [logement, setLogement] = useState(null);
   const [error, setError] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const fetchLogementDetails = async () => {
       try {
         const response = await fetch("/logement.json");
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
         const logementDetails = data.find((logement) => logement.id === id);
 
         if (!logementDetails) {
-          throw new Error("Logement non trouvé");
+          navigate("/notfound");
+        } else {
+          setLogement(logementDetails);
         }
-
-        setLogement(logementDetails);
       } catch (error) {
         setError(error.message);
         console.error("Error fetching logement details:", error);
@@ -30,7 +40,7 @@ const Logement = () => {
     };
 
     fetchLogementDetails();
-  }, [id]); // Dépend de l'ID pour récupérer les détails à chaque fois que l'ID change
+  }, [id, navigate]);
 
   if (error) {
     return <div>Erreur: {error}</div>;
@@ -40,8 +50,21 @@ const Logement = () => {
     return <div>Chargement des détails du logement...</div>;
   }
 
-  // Divise le nom en deux parties : prénom et nom de famille
   const [firstName, lastName] = logement.host.name.split(" ");
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? logement.pictures.length - 1 : prevIndex - 1
+    );
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === logement.pictures.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const renderNavigation = logement.pictures.length > 1;
 
   return (
     <div className="page_logements">
@@ -50,7 +73,25 @@ const Logement = () => {
 
         <div className="container-logements">
           <div className="container-img">
-            <img src={logement.cover} alt={logement.title} />
+            {renderNavigation && (
+              <button className="nav-arrow left-arrow" onClick={prevImage}>
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </button>
+            )}
+            <img
+              src={logement.pictures[currentImageIndex]}
+              alt={logement.title}
+            />
+            {renderNavigation && (
+              <button className="nav-arrow right-arrow" onClick={nextImage}>
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
+            )}
+            {renderNavigation && (
+              <div className="image-counter">
+                {currentImageIndex + 1}/{logement.pictures.length}
+              </div>
+            )}
           </div>
 
           <div className="infos">
