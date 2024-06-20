@@ -7,7 +7,9 @@ const NavLogo = () => {
   return (
     <div>
       <div className="navigation">
-        <img src={Logo} alt="logo" />
+        <NavLink to="/" className="logo-link">
+          <img src={Logo} alt="logo" />
+        </NavLink>
         <ul>
           <NavLink
             to="/"
