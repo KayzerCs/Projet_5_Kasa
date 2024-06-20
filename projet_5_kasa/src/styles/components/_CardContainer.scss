@@ -5,7 +5,7 @@
   grid-template-columns: repeat(3, 1fr); // Limite à un maximum de 3 colonnes
   gap: 25px; // Espace entre les cartes
   padding: 25px;
-  background-color: rgb(246,246,246);
+  background-color: rgb(246, 246, 246);
   // background-color: grey;/
   border-radius: 10px;
   justify-items: center;
@@ -24,9 +24,11 @@
     gap: 20px;
     padding: 0;
     background-color: #f0f0f0;
+    margin-top: 5%;
+    margin-bottom: 5%;
 
     .card-link {
-     width: 100%;
+      width: 100%;
     }
   }
 }
