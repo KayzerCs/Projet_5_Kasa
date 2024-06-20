@@ -1,29 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import "../styles/components/_CardContainer.scss";
+import Data from "../assets/data_bank/data.json"; // Importation directe des données JSON
 
 const CardContainer = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const loadData = () => {
       try {
-        const response = await fetch("/logement.json"); // Chemin relatif vers le fichier JSON
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        setData(data);
+        setData(Data); // Utilisation directe des données importées
       } catch (error) {
-        setError(error.message);
-        console.error("Error fetching data:", error);
+        setError("Erreur lors du chargement des données.");
+        console.error("Error loading data:", error);
       }
     };
 
-    fetchData();
+    loadData();
   }, []);
 
   return (

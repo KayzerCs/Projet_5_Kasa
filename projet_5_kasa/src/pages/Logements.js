@@ -9,6 +9,7 @@ import {
 import NavLogo from "../components/NavLogo";
 import Footer from "../components/Footer";
 import Collapse from "../components/Collapse";
+import Data from "../assets/data_bank/data.json"; // Importation directe des données JSON
 
 const Logement = () => {
   const { id } = useParams();
@@ -18,15 +19,9 @@ const Logement = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    const fetchLogementDetails = async () => {
+    const loadLogementDetails = () => {
       try {
-        const response = await fetch("/logement.json");
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        const logementDetails = data.find((logement) => logement.id === id);
+        const logementDetails = Data.find((logement) => logement.id === id);
 
         if (!logementDetails) {
           navigate("/notfound");
@@ -34,12 +29,12 @@ const Logement = () => {
           setLogement(logementDetails);
         }
       } catch (error) {
-        setError(error.message);
-        console.error("Error fetching logement details:", error);
+        setError("Erreur lors de la récupération des détails du logement.");
+        console.error("Error loading logement details:", error);
       }
     };
 
-    fetchLogementDetails();
+    loadLogementDetails();
   }, [id, navigate]);
 
   if (error) {
