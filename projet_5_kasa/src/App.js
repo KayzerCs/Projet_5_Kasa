@@ -12,7 +12,6 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/logement/:id" element={<Logements />} />{" "}
-        {/* Vérifiez cette ligne */}
         {/* path="*" fonctionne si jamais l'url ne corespond a rien de déclarer au dessus */}
         <Route path="*" element={<NotFound />} />
       </Routes>
