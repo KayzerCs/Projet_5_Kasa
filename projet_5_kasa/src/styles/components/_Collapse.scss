@@ -2,7 +2,7 @@
 
 .collapse {
   .collapse-container {
-    width: 100%; // Définit la largeur à 80% de son conteneur parent
+    width: 100%;
 
     &.collapse-description {
       width: 90%;
@@ -22,26 +22,30 @@
     }
   }
 
-  // Définition du style pour le bouton de collapse
+  
   .collapse-button {
-    width: 100%; // Le bouton prend toute la largeur de son parent
-    background-color: $color-3; // Utilise une couleur de fond définie dans les paramètres
-    color: $color-2; // Utilise une couleur de texte définie dans les paramètres
-    padding: 10px; // Ajoute un espace intérieur de 10px tout autour du texte
-    border: none; // Supprime les bordures du bouton
-    text-align: left; // Aligne le texte à gauche
-    font-size: 18px; // Définition de la taille de la police à 18px
-    font-weight: 600; // Utilisation d'une police semi-grasse
-    cursor: pointer; // Change le curseur en pointeur (main) pour indiquer qu'il est cliquable
-    outline: none; // Supprime les contours par défaut qui apparaissent lors du focus
-    display: flex; // Utilise Flexbox pour disposer les enfants du bouton
-    justify-content: space-between; // Espace équitablement les éléments enfants avec de l'espace entre eux
-    align-items: center; // Aligne les enfants au centre verticalement
-    transition: background-color 0.3s ease; // Ajoute une transition douce pour le changement de couleur de fond sur 0.3 secondes
-    border-radius: 5px; // Arrondit les coins du bouton avec un rayon de 5px
+    width: 100%;
+    background-color: $color-3;
+    color: $color-2;
+    padding: 10px;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+
+    @media (max-width: 335px) {
+      font-size: 13px;
+    }
   }
 
-  // Définition du style pour l'icône du collapse
+  
   .collapse-icon {
     transition: transform 0.3s ease; // Ajoute une transition douce pour les transformations (comme la rotation) sur 0.3 secondes
     transform: rotate(
@@ -49,32 +53,33 @@
     ); // Par défaut, l'icône est orientée vers le haut (rotation à 0 degrés)
   }
 
-  // Définition du style pour l'icône lorsque la section est ouverte
+  
   .collapse-icon.open {
     transform: rotate(
       -180deg
     ); // Tourne l'icône de 180 degrés vers la gauche lorsque la section est ouverte
   }
 
-  // Définition du style pour le contenu du collapse
+  
   .collapse-content {
-    max-height: 0; // Réduit la hauteur maximale à 0 pour cacher le contenu lorsque la section est fermée
-    overflow: hidden; // Empêche le contenu débordant de déborder visuellement du conteneur
+    max-height: 0;
+    overflow: hidden;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
       padding 0.3s ease-out;
-    // Ajoute des transitions douces pour les changements de hauteur maximale, d'opacité et de padding sur 0.3 secondes
-    padding: 0 10px; // Ajoute un padding horizontal de 10px
-    opacity: 0; // Rend le contenu invisible lorsque la section est fermée
-    background-color: $color-4; // Définit une couleur de fond pour le contenu
-    font-size: 16px; // Définit la taille de la police à 16px
-    line-height: 1.5; // Définit l'espacement des lignes à 1.5 fois la taille de la police
-    visibility: hidden; // Cache le contenu pour éviter qu'il soit visible même partiellement
+
+    padding: 0 10px;
+    opacity: 0;
+    background-color: $color-4;
+    font-size: 16px;
+    line-height: 1.5;
+    visibility: hidden;
 
     &.show {
-      max-height: 1000px; // Définit une hauteur maximale grande pour afficher complètement le contenu lorsque la section est ouverte
-      padding: 10px 10px; // Ajoute un padding de 10px tout autour du contenu
-      opacity: 1; // Rend le contenu visible lorsque la section est ouverte
-      visibility: visible; // Rend le contenu visible (annule l'effet de `visibility: hidden`)
+      max-height: 1000px;
+      padding: 10px 10px;
+      opacity: 1;
+      visibility: visible;
+      font-size: 13px;
     }
   }
 }

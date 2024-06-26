@@ -16,20 +16,38 @@
       font-weight: 700;
       color: $color-3;
       margin-top: 200px;
+
+      @media (max-width: 335px) {
+        font-size: 96px;
+      }
     }
 
-    p {
+    .text {
       font-size: 25px;
       color: $color-3;
       margin-top: -50px;
-      letter-spacing: 1px;
+
+      @media (max-width: 335px) {
+        font-size: 18px;
+        margin-top: 0;
+        text-align: center;
+
+        .break::after {
+          content: "\A";
+          white-space: pre;
+        }
+      }
     }
 
     .link {
-      font-size: 14px;
+      font-size: 18px;
       margin-top: 200px;
       margin-bottom: 200px;
       color: $color-1;
+
+      @media (max-width: 335px) {
+        font-size: 14px;
+      }
     }
   }
 

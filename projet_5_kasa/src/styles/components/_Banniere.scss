@@ -14,18 +14,20 @@
   position: relative; // Pour que l'élément soit le conteneur de positionnement pour ::before
   margin-bottom: 10px;
 
+  @media screen and (max-width: 860px) {
+    height: 111px;
+  }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 20px; // Appliquez la même bordure arrondie
-      z-index: 1; // Place le fond sombre derrière le texte
-
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px; // Appliquez la même bordure arrondie
+    z-index: 1; // Place le fond sombre derrière le texte
   }
 
   &.about {
@@ -39,9 +41,27 @@
       1px 1px 0 #000;
     font-weight: 700;
     z-index: 2; // Assurez-vous que le texte est au-dessus de l'overlay
+    width: 100%; // S'assurer que le texte occupe toute la largeur
 
     @media screen and (max-width: 860px) {
       font-size: 30px;
+    }
+
+    @media screen and (max-width: 335px) {
+      font-size: 24px;
+      text-align: left;
+
+      .break::before {
+        content: "\A";
+        white-space: pre;
+      }
+    }
+  }
+
+  @media screen and (max-width: 335px) {
+    .banniere-text {
+      text-align: left;
+      padding-left: 10px; // Ajouter du padding pour éloigner le texte du bord gauche
     }
   }
 }

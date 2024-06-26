@@ -23,7 +23,7 @@ const NavLogo = () => {
             to="/about"
             className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
           >
-            <li>À Propos</li>
+            <li>A Propos</li>
           </NavLink>
         </ul>
       </div>

@@ -3,7 +3,7 @@
 .page_about {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Assurez que la page prend toute la hauteur de la fenêtre */
+  min-height: 100vh; 
 
   .navlogo {
     margin-bottom: 25px;
@@ -14,11 +14,11 @@
     flex-direction: column;
     gap: 35px;
     padding-top: 55px;
-    flex: 1; /* Permet à cette section de prendre tout l'espace disponible */
+    flex: 1;
   }
 
   .footer {
-    margin-top: auto; /* Pousse le footer vers le bas */
-    /* Ajoutez d'autres styles si nécessaire */
+    margin-top: auto; 
+
   }
 }

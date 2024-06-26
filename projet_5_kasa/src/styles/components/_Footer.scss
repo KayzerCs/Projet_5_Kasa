@@ -17,11 +17,22 @@ footer {
     flex-direction: column;
     justify-content: center; // Centre les éléments verticalement
     align-items: center; // Centre les éléments horizontalement
+    margin-top: 25px;
 
     p {
       margin-top: 35px; // Espace au-dessus du paragraphe
       margin-bottom: 20px; // Espace en dessous du paragraphe
+      font-size: 24px;
+
+      @media (max-width: 335px) {
+        margin-top: 15px;
+        font-size: 12px;
+
+        .break::after {
+          content: "\A";
+          white-space: pre;
+        }
+      }
     }
   }
 }
-

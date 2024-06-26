@@ -11,7 +11,11 @@ const NotFound = () => {
           <NavLogo />
           <div className="container_p">
             <p className="number">404</p>
-            <p>Oups! La page que vous demandez n'existe pas.</p>
+            <p class="text">
+              Oups! La page <span class="break">que</span> vous demandez
+              n'existe pas.
+            </p>
+
             <Link className="link" to="/">
               Retourner sur la page d'acceuil
             </Link>

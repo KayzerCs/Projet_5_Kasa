@@ -15,6 +15,7 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    gap: 10px;
 
     .nav-link {
       text-decoration: none;
@@ -32,7 +33,7 @@
         font-weight: 500;
 
         @media (max-width: 440px) {
-          font-size: 15px;
+          font-size: 12px;
         }
       }
 
